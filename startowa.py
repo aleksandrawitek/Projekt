@@ -14,8 +14,6 @@ class Window(Frame):
 
         #nadanie tytułu      
         self.master.title("Platforma Edukacyjna")
-    
-
 
 root = Tk()
 
