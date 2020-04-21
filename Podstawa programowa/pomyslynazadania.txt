@@ -1,0 +1,10 @@
+Zadania są opracowane na podstawie:
+https://cke.gov.pl/images/_EGZAMIN_OSMOKLASISTY/Podstawa_programowa/SP_PP_2017_Matematyka.pdf
+https://gwo.pl/strony/2432/seo_link:materialy-strefa-ucznia-4sp
+
+Opracowanie zadań:
+
+- generowanie pseudolosowych liczb oraz dzialan,
+- wprowadzenie wskazowek do zadan 
+- mozliwosc wpisywania odpowiedzi oraz sprawdzenie jej poprawnosci
+- mozliwosc wykonywania testow 
