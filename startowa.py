@@ -73,7 +73,7 @@ base_folder = os.path.dirname(__file__)
 image_path = os.path.join(base_folder, 'learning.png')
 learning = PhotoImage(file=image_path)
 
-label = Label(image=learning, width = okno_dl, height = 0.3 * okno_szer)
+label = Label(image=learning, width = okno_dl, height = 0.43 * okno_szer)
 label.image = learning
 label.pack(side = BOTTOM)
 
