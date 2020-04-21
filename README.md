@@ -28,4 +28,3 @@ Zrobione:
 - zapoznanie się z bibilioteką oraz wykonanie tutoriali online (https://pythonprogramming.net/python-3-tkinter-basics-tutorial/)
 - instalacja dodatkowych modułów - pillow, cv2
 - zrobienie kompletnej strony startowej aplikacji (w repozytorium znajduję się rowniez ss)
-- test
