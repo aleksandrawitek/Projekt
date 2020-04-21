@@ -6,6 +6,10 @@ Używane technologie:
 - HTML5 
 - Sqlite 3.24.0 
 
+Po zmianach:
+
+-Python 3.8.2 oraz jego bibiloteki i moduly
+
 Raport 1 - 05.04.20:  
 Zrobione:  
 - zapoznanie się z tworzeniem repozytorium git, github w celu dokumentowania pracy nad projektem (tutoriale: https://dailyweb.pl/git-dla-poczatkujacych-czyli-twoje-pierwsze-repozytorium/) 
