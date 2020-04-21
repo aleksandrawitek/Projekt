@@ -29,6 +29,7 @@ Zrobione:
 - instalacja dodatkowych modułów - pillow, cv2
 - zrobienie kompletnej strony startowej aplikacji (w repozytorium znajduję się rowniez ss)
 - opracowanie oraz zapoznanie się z typami zadań oraz podstawą programową
+- polaczenie podstron ze strona glowna za pomoca guzikow
 
 Do zrobienia:
 - opracowanie typow zadan jako programy w pythonie
