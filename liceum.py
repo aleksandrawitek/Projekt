@@ -1,9 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
-from tkinter.filedialog import askopenfile
 import os
 from subprocess import call
-
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -17,21 +15,13 @@ class Window(Frame):
         #nadanie tytułu      
         self.master.title("Platforma Edukacyjna")
 
-def openpodst():
+def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'podstawowka.py')
+    file_path = os.path.join(base_folder, 'startowa.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-
-def openlo():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'liceum.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
-    
 root = Tk()
 
 #rozmiar okna, dostosowany do wymiarów ekranu uzytkownika
@@ -48,10 +38,10 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Wybierz etap edukacji:', font = "Arial 30 ", width = okno_szer, height=4,background='CadetBlue3', fg = 'PaleTurquoise1', anchor = CENTER)
+tekst = Label(root, text = 'Wybierz klasę:', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
 tekst.pack()
 
-root.configure(background='PaleTurquoise1')
+root.configure(background='gray79')
 
 #dodanie przycisków oraz dopracowanie szczegółów ich wyglądu w zaleznosci od wielkosci okna
 
@@ -59,22 +49,29 @@ okno_dl = int(okno_dl)
 okno_szer= int(okno_szer)
 
 buttonwidth = int(0.05*okno_dl)
-buttonheight = int(0.005*okno_szer)
-button1x = 0.35*okno_szer
+buttonheight = int(0.001*okno_szer)
+buttonx = 0.35*okno_szer
 button1y = 0.15*okno_dl
-button2x = 0.35*okno_szer
-button2y = 0.25*okno_dl
+button2y = 0.19*okno_dl
+button3y = 0.23*okno_dl
+button4y = 0.27*okno_dl
 
-podstawowka = Button(root, text = 'Szkoła Podstawowa', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openpodst).place(x= button1x, y=button1y)
-liceum = Button(root, text = 'Liceum', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openlo).place(x= button2x, y=button2y)
+
+
+klasa1 = Button(root, text = 'Klasa 1', width=buttonwidth, height=buttonheight, font = "Arial 20").place(x= buttonx, y=button1y)
+klasa2 = Button(root, text = 'Klasa 2', width=buttonwidth, height=buttonheight, font = "Arial 20").place(x= buttonx, y=button2y)
+klasa3 = Button(root, text = 'Klasa 3', width=buttonwidth, height=buttonheight, font = "Arial 20").place(x= buttonx, y=button3y)
+klasa4 = Button(root, text = 'Klasa 4', width=buttonwidth, height=buttonheight, font = "Arial 20").place(x= buttonx, y=button4y)
+cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
+
 
 #dodanie zdjęcia u dołu strony dopasowanego do wymiarów okna aplikacji
 base_folder = os.path.dirname(__file__)
-image_path = os.path.join(base_folder, 'learning.png')
-learning = PhotoImage(file=image_path)
+image_path = os.path.join(base_folder, 'owl.png')
+owl = PhotoImage(file=image_path)
 
-label = Label(image=learning, width = okno_dl, height = 0.3 * okno_szer)
-label.image = learning
+label = Label(image=owl, width = okno_dl, height = 0.43 * okno_szer)
+label.image = owl
 label.pack(side = BOTTOM)
 
 
