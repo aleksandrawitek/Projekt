@@ -28,3 +28,13 @@ Zrobione:
 - zapoznanie się z bibilioteką oraz wykonanie tutoriali online (https://pythonprogramming.net/python-3-tkinter-basics-tutorial/)
 - instalacja dodatkowych modułów - pillow, cv2
 - zrobienie kompletnej strony startowej aplikacji (w repozytorium znajduję się rowniez ss)
+- opracowanie oraz zapoznanie się z typami zadań oraz podstawą programową
+
+Do zrobienia:
+- opracowanie typow zadan jako programy w pythonie
+- dodanie mozliwosci wpisywania odpowiedzi
+
+Napotkane problemy:
+- instalacja pillow
+- wstawianie zdjec do aplikacji
+
