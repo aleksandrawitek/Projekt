@@ -55,11 +55,11 @@ liceum = Button(root, text = 'Liceum', width=buttonwidth, height=buttonheight, f
 
 #dodanie zdjęcia u dołu strony dopasowanego do wymiarów okna aplikacji
 base_folder = os.path.dirname(__file__)
-image_path = os.path.join(base_folder, 'brain.png')
-brain = PhotoImage(file=image_path)
+image_path = os.path.join(base_folder, 'learning.png')
+learning = PhotoImage(file=image_path)
 
-label = Label(image=brain, width = okno_dl, height = 0.3 * okno_szer)
-label.image = brain
+label = Label(image=learning, width = okno_dl, height = 0.3 * okno_szer)
+label.image = learning
 label.pack(side = BOTTOM)
 
 
