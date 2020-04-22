@@ -8,7 +8,7 @@ Używane technologie:
 
 Po zmianach:
 
--Python 3.8.2 oraz jego bibiloteki i moduly
+- Python 3.8.2 oraz jego bibiloteki i moduly
 
 Raport 1 - 05.04.20:  
 Zrobione:  
