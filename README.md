@@ -47,9 +47,12 @@ Raport 3 - 15.05.20:
 
 Zrobione:
 - zdefiniowanie poszczególnych funkcji dla każdego etapu kształcenia (np. klasa 4 generowanie pseudolosowych liczb oraz obliczanie ich sumy etc.)
+- zaplanowanie zadan z opracowaniem podstawy programowej
 
 Do zrobienia:
 - stworzyć zadania, dzięki połączeniu zrobionych wczesniej funkcji oraz szaty graficznej
+- uporzadkowac wszystkie zadania wedlug poziomow ksztalcenia
+- (do wersji alfa) dokonczyc zadania dla wszystkich etapow
 
 Napotkane problemy:
 - zaprojektowanie treści zadań oraz przeniesienie ich do pythona
