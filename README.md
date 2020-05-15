@@ -56,3 +56,4 @@ Do zrobienia:
 
 Napotkane problemy:
 - zaprojektowanie treści zadań oraz przeniesienie ich do pythona
+- uporzadkowanie zadan, duzo pomyslow, czesc niepraktycznych
