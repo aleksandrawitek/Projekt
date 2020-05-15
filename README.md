@@ -48,6 +48,7 @@ Raport 3 - 15.05.20:
 Zrobione:
 - zdefiniowanie poszczególnych funkcji dla każdego etapu kształcenia (np. klasa 4 generowanie pseudolosowych liczb oraz obliczanie ich sumy etc.)
 - zaplanowanie zadan z opracowaniem podstawy programowej
+- wiekszosc czasu została przeznaczona na planowanie zadań oraz ich rozwiązań w pythonie
 
 Do zrobienia:
 - stworzyć zadania, dzięki połączeniu zrobionych wczesniej funkcji oraz szaty graficznej
@@ -57,3 +58,4 @@ Do zrobienia:
 Napotkane problemy:
 - zaprojektowanie treści zadań oraz przeniesienie ich do pythona
 - uporzadkowanie zadan, duzo pomyslow, czesc niepraktycznych
+
