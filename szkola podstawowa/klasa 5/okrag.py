@@ -10,6 +10,3 @@ class Kolo():
     def obwod(self):
         return 2*self.radius*pi
 
-#przykladowe zastosowanie
-print(Kolo(10).pole())
-print(Kolo(10).obwod())
