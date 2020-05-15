@@ -43,3 +43,13 @@ Napotkane problemy:
 - instalacja pillow
 - wstawianie zdjec do aplikacji
 
+Raport 3 - 15.05.20:
+
+Zrobione:
+- zdefiniowanie poszczególnych funkcji dla każdego etapu kształcenia (np. klasa 4 generowanie pseudolosowych liczb oraz obliczanie ich sumy etc.)
+
+Do zrobienia:
+- stworzyć zadania, dzięki połączeniu zrobionych wczesniej funkcji oraz szaty graficznej
+
+Napotkane problemy:
+- zaprojektowanie treści zadań oraz przeniesienie ich do pythona
