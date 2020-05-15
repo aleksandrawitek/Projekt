@@ -2,8 +2,6 @@ def obwod(a,b,c):
     print("Twój obwód to:")
     print(a+b+c)
 def pole(a,b,c):
-    #skorzystamy ze wzoru na pole 
-    #(p(p-a)(p-b)(p-c))^1/2, gdzie p to polowa obwodu
     p = ((a+b+c) / 2)
     po = (p*(p-a)*(p-b)*(p-c))**(1/2)
     print("Twoje pole to:")
