@@ -70,7 +70,7 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Wybierz temat:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
+tekst = Label(root, text = 'Wybierz dział:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
 tekst.pack()
 
 root.configure(background='papaya whip')
