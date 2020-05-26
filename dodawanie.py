@@ -89,7 +89,7 @@ buttonheight = int(0.001*okno_szer)
 
 
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
-refresh = Button(root, text = 'Odswiez', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
+refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
 
 a = randrange(1,1000,1)
 b = randrange(1,1000,1)
