@@ -19,7 +19,7 @@ class Window(Frame):
 
 def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, '.py')
+    file_path = os.path.join(base_folder, 'klasa4.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -48,6 +48,13 @@ def openmnozenie():
 def opendzielenie():
     base_folder = os.path.dirname(__file__)
     file_path = os.path.join(base_folder, 'dzielenie.py')
+    file_path = str(file_path)
+    root.destroy()
+    call(['python3', file_path])
+
+def opendzieleniereszta():
+    base_folder = os.path.dirname(__file__)
+    file_path = os.path.join(base_folder, 'dzieleniereszta.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -86,12 +93,14 @@ button2y = 0.17*okno_dl
 button3y = 0.21*okno_dl
 button4y = 0.25*okno_dl
 button5y = 0.29*okno_dl
+button6y = 0.33*okno_dl
 
 
 klasa4 = Button(root, text = 'Dodawanie', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opendodawanie).place(x= buttonx, y=button1y)
 klasa5 = Button(root, text = 'Odejmowanie', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openodejmowanie).place(x= buttonx, y=button2y)
 klasa6 = Button(root, text = 'Mnozenie', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openmnozenie).place(x= buttonx, y=button3y)
 klasa7 = Button(root, text = 'Dzielenie', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opendzielenie).place(x= buttonx, y=button4y)
+klasa7 = Button(root, text = 'Dzielenie z reszta', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opendzieleniereszta).place(x= buttonx, y=button5y)
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 
 #dodanie zdjęcia u dołu strony dopasowanego do wymiarów okna aplikacji
