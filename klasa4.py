@@ -33,7 +33,7 @@ def openliczbyidzialania():
 
 def opensystemrzymski():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'systemrzymski.py')
+    file_path = os.path.join(base_folder, 'rzymskie.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
