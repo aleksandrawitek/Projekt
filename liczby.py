@@ -17,46 +17,40 @@ class Window(Frame):
 
 def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'startowa.py')
+    file_path = os.path.join(base_folder, 'liceum.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def openliczby():
+def openprocenty():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'liczby.py')
+    file_path = os.path.join(base_folder, 'procenty.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
 
-def openfunkcje():
+def openrownania():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'funkcje.py')
+    file_path = os.path.join(base_folder, 'rownania.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def openciagi():
+def openwzory():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'ciagi.py')
+    file_path = os.path.join(base_folder, 'wzory.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def opentrygo():
+def opendziedzina():
     base_folder = os.path.dirname(__file__)
     file_path = os.path.join(base_folder, 'trygonometria.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def openstatystyka():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'statystyka.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
 root = Tk()
 
 #rozmiar okna, dostosowany do wymiarów ekranu uzytkownika
@@ -73,7 +67,7 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Wybierz dział:', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
+tekst = Label(root, text = 'Wybierz temat:', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
 tekst.pack()
 
 root.configure(background='gray79')
@@ -93,11 +87,11 @@ button4y = 0.27*okno_dl
 button5y = 0.31*okno_dl
 
 
-klasa1 = Button(root, text = 'Liczby', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openliczby).place(x= buttonx, y=button1y)
-klasa2 = Button(root, text = 'Funkcje', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openfunkcje).place(x= buttonx, y=button2y)
-klasa3 = Button(root, text = 'Ciągi', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openciagi).place(x= buttonx, y=button3y)
-klasa4 = Button(root, text = 'Trygonometria', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opentrygo).place(x= buttonx, y=button4y)
-klasa5 = Button(root, text = 'Statystyka', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openstatystyka).place(x= buttonx, y=button5y)
+klasa1 = Button(root, text = 'Procenty', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openprocenty).place(x= buttonx, y=button1y)
+klasa2 = Button(root, text = 'Równania', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openrownania).place(x= buttonx, y=button2y)
+klasa3 = Button(root, text = 'Wzory skróconego mnozenia', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openwzory).place(x= buttonx, y=button3y)
+klasa4 = Button(root, text = 'Okreslanie dziedziny', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opendziedzina).place(x= buttonx, y=button4y)
+
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 
 
