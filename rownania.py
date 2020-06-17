@@ -28,7 +28,7 @@ def cofnij():
 def odswiez():
 
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'wzory.py')
+    file_path = os.path.join(base_folder, 'rownania.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -72,7 +72,7 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Oblicz uzywajac wzorow skroconego mnozenia:', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
+tekst = Label(root, text = 'Oblicz x:', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
 tekst.pack()
 
 root.configure(background='gray79')
@@ -92,20 +92,98 @@ buttonheight = int(0.001*okno_szer)
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
 
+losowanie = randrange(1,200,1)
+if (losowanie <= 50):
+    a = randrange(-100,100,1)
+    b = randrange(-100,100,1)
+    c = randrange(-100,100,1)
+    while ((c-b)%a != 0):
+        a = randrange(-100,100,1)
+        b = randrange(-100,100,1)
+        c = randrange(-100,100,1)
+    liczba = (c-b)/a
 
-losowanie = randrange(1,100,1)
-a = randrange(1,100,1)
-b = randrange(1,100,1)
-if (losowanie <= 33):
-    liczba = (a+b)**2
-    poleconko = '('+ str(a) + ' + ' + str(b) + ')^2'
-elif (losowanie > 33 and losowanie <= 66):
-    liczba = (a-b)**2
-    poleconko = '('+ str(a) + ' - ' + str(b) + ')^2'
+    if (a < 0):
+        a = '(' + str(a) + ')'
+    if (b < 0):
+        b = '(' + str(b) + ')'
+    if (c < 0):
+        c = '(' + str(c) + ')'
+
+
+
+    poleconko = str(a) + 'x + ' + str(b) + ' = ' + str(c) 
+
+
+elif (losowanie > 50 and losowanie <= 100):
+    a = randrange(-100,100,1)
+    b = randrange(-100,100,1)
+    c = randrange(-100,100,1)
+    while ((c*b)%a != 0 or b == 0):
+        a = randrange(-100,100,1)
+        b = randrange(-100,100,1)
+        c = randrange(-100,100,1)
+    liczba = (c*b)/a
+
+    if (a < 0):
+        a = '(' + str(a) + ')'
+    if (b < 0):
+        b = '(' + str(b) + ')'
+    if (c < 0):
+        c = '(' + str(c) + ')'
+
+
+
+    poleconko = str(a) + 'x / ' + str(b) + ' = ' + str(c) 
+
+elif (losowanie > 100 and losowanie <= 150):
+    a = randrange(-100,100,1)
+    b = randrange(-100,100,1)
+    c = randrange(-100,100,1)
+    d = randrange(-100,100,1)
+    while ((c*d - b)%a != 0 or c == 0):
+        a = randrange(-100,100,1)
+        b = randrange(-100,100,1)
+        c = randrange(-100,100,1)
+        d = randrange(-100,100,1)
+    liczba = (c*d - b)/a
+
+    if (a < 0):
+        a = '(' + str(a) + ')'
+    if (b < 0):
+        b = '(' + str(b) + ')'
+    if (c < 0):
+        c = '(' + str(c) + ')'
+    if (d < 0):
+        d = '(' + str(d) + ')'
+
+
+    poleconko = '(' + str(a) + 'x + ' + str(b) + ') / ' + str(c) + ' = ' + str(d)   
+
 else:
-    liczba = (a-b)*(a+b)
-    poleconko =  str(a) + '^2 + ' + str(b) + '^2'
+    a = randrange(-100,100,1)
+    b = randrange(-100,100,1)
+    c = randrange(-100,100,1)
+    d = randrange(-100,100,1)
+    while ((c- b)%(a-d) != 0 or (a-d) == 0):
+        a = randrange(-100,100,1)
+        b = randrange(-100,100,1)
+        c = randrange(-100,100,1)
+        d = randrange(-100,100,1)
+    liczba = (c - b)/(a - d)
 
+    if (a < 0):
+        a = '(' + str(a) + ')'
+    if (b < 0):
+        b = '(' + str(b) + ')'
+    if (c < 0):
+        c = '(' + str(c) + ')'
+    if (d < 0):
+        d = '(' + str(d) + ')'
+
+
+
+    poleconko = str(a) + 'x + ' + str(b) + ' = ' + str(c) + 'x + ' + str(d)   
 
 polecenie = Label(root, text = poleconko, background='gray79', font = "Arial 30 ", fg = 'black').place(x= polx, y=poly)
 

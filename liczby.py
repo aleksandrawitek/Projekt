@@ -44,9 +44,9 @@ def openwzory():
     root.destroy()
     call(['python3', file_path])
 
-def opendziedzina():
+def openuklady():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'trygonometria.py')
+    file_path = os.path.join(base_folder, 'uklady.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -90,7 +90,7 @@ button5y = 0.31*okno_dl
 klasa1 = Button(root, text = 'Procenty', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openprocenty).place(x= buttonx, y=button1y)
 klasa2 = Button(root, text = 'Równania', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openrownania).place(x= buttonx, y=button2y)
 klasa3 = Button(root, text = 'Wzory skróconego mnozenia', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openwzory).place(x= buttonx, y=button3y)
-klasa4 = Button(root, text = 'Okreslanie dziedziny', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opendziedzina).place(x= buttonx, y=button4y)
+klasa4 = Button(root, text = 'Uklady rownan', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openuklady).place(x= buttonx, y=button4y)
 
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 

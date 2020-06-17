@@ -39,10 +39,10 @@ def odswiez():
 def sprawdz():
     userinput= var.get()
     if (userinput == liczba):
-        poprawna = Label(root, text = "Poprawna", background='gray79', font = "Arial 30 ", fg = 'Dark Green').place(x= jakax, y=poly)
+        poprawna = Label(root, text = "Poprawna", background='gray79', font = "Arial 30 ", fg = 'Dark Green').place(x= 1.2*jakax, y=1.2*poly)
     else:
         blad = "Poprawny wynik - " + str(liczba)
-        niepoprawna = Label(root, text = blad, background='gray79', font = "Arial 30 ", fg = 'Red2').place(x= jakax, y=poly)
+        niepoprawna = Label(root, text = blad, background='gray79', font = "Arial 30 ", fg = 'Red2').place(x= 1.2*jakax, y=1.2*poly)
 
 
 root = Tk()
@@ -92,22 +92,40 @@ buttonheight = int(0.001*okno_szer)
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
 
-a = randrange(1,200,1)
-b = randrange(1,1000,1)
-while ((100*b) % a != 0):
+losowanie = randrange(1,100,1)
+if (losowanie <= 33):
     a = randrange(1,200,1)
-liczba = 100 * b / a
+    b = randrange(1,1000,1)
+    while ((100*b) % a != 0):
+        a = randrange(1,200,1)
+    liczba = 100 * b / a
 
 
 
-poleconko = str(a) + ' % z x jest równe ' + str(b) 
+    poleconko = str(a) + ' % z x jest równe ' + str(b) 
+
+
+elif (losowanie > 33 and losowanie <= 66):
+    a = randrange(1,1000,1)
+    b = randrange(1,100,1)
+    liczba = int(round(a + ((b/100) * a)))
+
+
+
+    poleconko = 'Liczba o ' + str(b) +'% wieksza od ' +str(a)   
+
+else:
+    a = randrange(1,1000,1)
+    b = randrange(1,100,1)
+    liczba = int(round(a - ((b/100) * a)))
+    poleconko = 'Liczba o ' + str(b) +'% mniejsza od ' +str(a)
 
 polecenie = Label(root, text = poleconko, background='gray79', font = "Arial 30 ", fg = 'black').place(x= polx, y=poly)
 
 
 
 var = IntVar()
-odpowiedz = Label(root, text = "Odpowiedz", background='papaya whip', font = "Arial 30 ", fg = 'black').place(x= odpx, y=odpy)
+odpowiedz = Label(root, text = "Odpowiedz", background='gray79', font = "Arial 30 ", fg = 'black').place(x= odpx, y=odpy)
 poletekstowe = Entry(root, bd = 10, textvariable=var).place(x= polex, y=odpy)
 
 sprawdzenie = Button(root, text = 'Enter', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = sprawdz).place(x= sprx, y=odpy)
