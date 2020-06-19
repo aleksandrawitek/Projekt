@@ -28,7 +28,7 @@ def cofnij():
 def odswiez():
 
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'arytmetyczny.py')
+    file_path = os.path.join(base_folder, 'geometryczny.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -98,11 +98,14 @@ if (losowanie <= 50):
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
+    a = randrange(-30,30,1)
     b = randrange(-20,20,1)
-    n = randrange(1,100,1)
+    n = randrange(1,10,1)
 
-    liczba = int(((2*a) + ((n-1)*b))*n/2)
+    if (b == 1):
+        liczba = n*a
+    else:
+        liczba = a *(1 - (b**n))/(1-b)
 
 
     if (a < 0):
@@ -111,7 +114,7 @@ if (losowanie <= 50):
         b = '(' + str(b) + ')'
    
 
-    poleconko = 'a1 = ' + str(a) + ', r = ' + str(b) + ', n = ' + str(n) 
+    poleconko = 'a1 = ' + str(a) + ', q = ' + str(b) + ', n = ' + str(n) 
 
 
 elif (losowanie > 50 and losowanie <= 100):
@@ -119,11 +122,11 @@ elif (losowanie > 50 and losowanie <= 100):
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
+    a = randrange(-30,30,1)
     b = randrange(-20,20,1)
-    n = randrange(1,100,1)
+    n = randrange(1,5,1)
 
-    liczba = int(a+((n-1)*b))
+    liczba = a*(b**(n-1))
 
 
     if (a < 0):
@@ -132,20 +135,20 @@ elif (losowanie > 50 and losowanie <= 100):
         b = '(' + str(b) + ')'
    
 
-    poleconko = 'a1 = ' + str(a) + ', r = ' + str(b) + ', n = ' + str(n) 
+    poleconko = 'a1 = ' + str(a) + ', q = ' + str(b) + ', n = ' + str(n) 
 
 elif (losowanie > 100 and losowanie <= 150):
-    tekst = Label(root, text = 'Wylicz roznice ciagu, gdzie', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
+    tekst = Label(root, text = 'Wylicz iloraz ciagu, gdzie', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
+    a = randrange(-30,30,1)
     b = randrange(-20,20,1)
-    n = randrange(1,100,1)
+    n = randrange(1,5,1)
 
     liczba = int(b)
 
-    an = a+((n-1)*b)
+    an = a*(b**(n-1))
 
 
     if (a < 0):
@@ -162,13 +165,13 @@ else:
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
+    a = randrange(-30,30,1)
     b = randrange(-20,20,1)
-    n = randrange(1,100,1)
+    n = randrange(1,5,1)
 
     liczba = int(a)
 
-    an = a+((n-1)*b)
+    an = a*(b**(n-1))
 
 
     if (a < 0):
@@ -179,7 +182,7 @@ else:
         an = '(' + str(an) + ')'
    
 
-    poleconko = 'r = ' + str(b) + ', an = ' + str(an) + ', n = ' + str(n) 
+    poleconko = 'q = ' + str(b) + ', an = ' + str(an) + ', n = ' + str(n) 
 
 polecenie = Label(root, text = poleconko, background='gray79', font = "Arial 30 ", fg = 'black').place(x= polx, y=poly)
 

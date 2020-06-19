@@ -51,12 +51,7 @@ def opentrygo():
     root.destroy()
     call(['python3', file_path])
 
-def openstatystyka():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'statystyka.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
+
 root = Tk()
 
 #rozmiar okna, dostosowany do wymiarów ekranu uzytkownika
@@ -97,7 +92,6 @@ klasa1 = Button(root, text = 'Liczby', width=buttonwidth, height=buttonheight, f
 klasa2 = Button(root, text = 'Funkcje', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openfunkcje).place(x= buttonx, y=button2y)
 klasa3 = Button(root, text = 'Ciągi', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openciagi).place(x= buttonx, y=button3y)
 klasa4 = Button(root, text = 'Trygonometria', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opentrygo).place(x= buttonx, y=button4y)
-klasa5 = Button(root, text = 'Statystyka', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openstatystyka).place(x= buttonx, y=button5y)
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 
 

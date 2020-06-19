@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 import os
 from subprocess import call
 from random import *
-
+from math import *
 
 
 class Window(Frame):
@@ -20,7 +20,7 @@ class Window(Frame):
 
 def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'ciagi.py')
+    file_path = os.path.join(base_folder, 'liceum.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -28,7 +28,7 @@ def cofnij():
 def odswiez():
 
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'arytmetyczny.py')
+    file_path = os.path.join(base_folder, 'trygonometria.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -92,94 +92,49 @@ buttonheight = int(0.001*okno_szer)
 #cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 #refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
 
-losowanie = randrange(1,200,1)
-if (losowanie <= 50):
-    tekst = Label(root, text = 'Wylicz sumę n wyrazów, gdzie', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
+losowanie = randrange(1,100,1)
+if (losowanie <= 33):
+    tekst = Label(root, text = 'Oblicz pole trójkąta wiedząc, ze', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
-    b = randrange(-20,20,1)
-    n = randrange(1,100,1)
-
-    liczba = int(((2*a) + ((n-1)*b))*n/2)
-
-
-    if (a < 0):
-        a = '(' + str(a) + ')'
-    if (b < 0):
-        b = '(' + str(b) + ')'
+    a = randrange(1,30,1)
+    b = randrange(1,20,1)
+    n = randrange(1,90,1)
+    x = radians(n)
+    liczba = int(round(0.5*a*b*sin(x)))
    
 
-    poleconko = 'a1 = ' + str(a) + ', r = ' + str(b) + ', n = ' + str(n) 
+    poleconko = 'a = ' + str(a) + ', b = ' + str(b) + ', kąt alfa = ' + str(n) 
 
 
-elif (losowanie > 50 and losowanie <= 100):
-    tekst = Label(root, text = 'Wylicz n-ty wyraz, gdzie', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
+elif (losowanie > 33 and losowanie <= 66):
+    tekst = Label(root, text = 'Oblicz promień okręgu opisanego na trójkącie, jeśli', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
-    b = randrange(-20,20,1)
-    n = randrange(1,100,1)
-
-    liczba = int(a+((n-1)*b))
-
-
-    if (a < 0):
-        a = '(' + str(a) + ')'
-    if (b < 0):
-        b = '(' + str(b) + ')'
+    a = randrange(1,30,1)
+    n = randrange(1,90,1)
+    x = radians(n)
+    liczba = int(round(0.5*(a/(sin(x)))))
    
 
-    poleconko = 'a1 = ' + str(a) + ', r = ' + str(b) + ', n = ' + str(n) 
+    poleconko = 'a = ' + str(a) + ', kąt alfa = ' + str(n) 
 
-elif (losowanie > 100 and losowanie <= 150):
-    tekst = Label(root, text = 'Wylicz roznice ciagu, gdzie', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
-    tekst.pack()
-    cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
-    refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
-    b = randrange(-20,20,1)
-    n = randrange(1,100,1)
-
-    liczba = int(b)
-
-    an = a+((n-1)*b)
-
-
-    if (a < 0):
-        a = '(' + str(a) + ')'
-    if (b < 0):
-        b = '(' + str(b) + ')'
-    if (an < 0):
-        an = '(' + str(an) + ')'
-   
-
-    poleconko = 'a1 = ' + str(a) + ', an = ' + str(an) + ', n = ' + str(n) 
 else:
-    tekst = Label(root, text = 'Wylicz pierszy wyraz ciagu, gdzie', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
+    tekst = Label(root, text = 'Oblicz sinus kąta wiedząc, ze', font = "Arial 30 ", width = okno_szer, height=4,background='gray63', fg = 'gray79', anchor = CENTER)
     tekst.pack()
     cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
     refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
-    a = randrange(-100,100,1)
-    b = randrange(-20,20,1)
-    n = randrange(1,100,1)
-
-    liczba = int(a)
-
-    an = a+((n-1)*b)
-
-
-    if (a < 0):
-        a = '(' + str(a) + ')'
-    if (b < 0):
-        b = '(' + str(b) + ')'
-    if (an < 0):
-        an = '(' + str(an) + ')'
+    n = randrange(1,90,1)
+    x = radians(n)
+    tan = tan(x)
+    sin = sin(x)
+    liczba = sin/tan
    
 
-    poleconko = 'r = ' + str(b) + ', an = ' + str(an) + ', n = ' + str(n) 
+    poleconko = 'tg(alfa) = ' + str(tan) + ', sin(alfa) = ' + str(sin) 
+
 
 polecenie = Label(root, text = poleconko, background='gray79', font = "Arial 30 ", fg = 'black').place(x= polx, y=poly)
 
