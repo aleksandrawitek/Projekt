@@ -19,7 +19,7 @@ class Window(Frame):
 
 def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'klasa4.py')
+    file_path = os.path.join(base_folder, 'podstawowka.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])

@@ -24,35 +24,28 @@ def cofnij():
     root.destroy()
     call(['python3', file_path])
 
-def openliczbyidzialania():
+def opendzielniki():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'liczbyidzialania.py')
+    file_path = os.path.join(base_folder, 'dzielniki.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def opensystemrzymski():
+def opennww():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'rzymskie.py')
+    file_path = os.path.join(base_folder, 'nww.py')
+    file_path = str(file_path)
+    root.destroy()
+    call(['python3', file_path])
+
+def opennwd():
+    base_folder = os.path.dirname(__file__)
+    file_path = os.path.join(base_folder, 'nwd.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
 
-def openpodzielnoscliczb():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'podzielnoscliczb.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
-
-
-def openfigurygeometryczne():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'figurygeometryczne.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
 
 root = Tk()
 
@@ -70,7 +63,7 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Wybierz dział:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
+tekst = Label(root, text = 'Wybierz temat:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
 tekst.pack()
 
 root.configure(background='papaya whip')
@@ -88,12 +81,13 @@ button2y = 0.17*okno_dl
 button3y = 0.21*okno_dl
 button4y = 0.25*okno_dl
 button5y = 0.29*okno_dl
+button6y = 0.33*okno_dl
 
 
-klasa4 = Button(root, text = 'Liczby i działania', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openliczbyidzialania).place(x= buttonx, y=button1y)
-klasa5 = Button(root, text = 'System rzymski', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opensystemrzymski).place(x= buttonx, y=button2y)
-klasa6 = Button(root, text = 'Figury geometryczne', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openfigurygeometryczne).place(x= buttonx, y=button3y)
-klasa7 = Button(root, text = 'Podzielność liczb', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openpodzielnoscliczb).place(x= buttonx, y=button4y)
+klasa4 = Button(root, text = 'Dzielniki liczb', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opendzielniki).place(x= buttonx, y=button1y)
+klasa5 = Button(root, text = 'NWW', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opennww).place(x= buttonx, y=button2y)
+klasa6 = Button(root, text = 'NWD', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opennwd).place(x= buttonx, y=button3y)
+
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 
 #dodanie zdjęcia u dołu strony dopasowanego do wymiarów okna aplikacji

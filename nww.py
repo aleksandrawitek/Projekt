@@ -20,7 +20,7 @@ class Window(Frame):
 
 def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'podstawowka.py')
+    file_path = os.path.join(base_folder, 'podzielnoscliczb.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -28,7 +28,7 @@ def cofnij():
 def odswiez():
 
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'rzymskie.py')
+    file_path = os.path.join(base_folder, 'nww.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
@@ -38,11 +38,10 @@ def odswiez():
 
 def sprawdz():
     userinput= var.get()
-    userinput = userinput.upper()
-    if (userinput == wynik):
+    if (userinput == liczba):
         poprawna = Label(root, text = "Poprawna", background='papaya whip', font = "Arial 30 ", fg = 'Dark Green').place(x= jakax, y=poly)
     else:
-        blad = "Poprawny wynik - " + str(wynik)
+        blad = "Poprawny wynik - " + str(liczba)
         niepoprawna = Label(root, text = blad, background='papaya whip', font = "Arial 30 ", fg = 'Red2').place(x= jakax, y=poly)
 
 
@@ -72,7 +71,7 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Zamień liczbę na rzymską:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
+tekst = Label(root, text = 'Oblicz:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
 tekst.pack()
 
 root.configure(background='papaya whip')
@@ -92,49 +91,23 @@ buttonheight = int(0.001*okno_szer)
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
 refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
 
-liczba = randrange(1,3999,1)
-liczba = str(liczba)
-def split_str(s):
-    return [ch for ch in s]
+def nwd(x, y):
+    while y != 0:
+        y, x = x % y, y
+    return x
+def nww(x, y):
+    return abs( x * y / nwd(x, y) )
+a = randrange(1,100,1)
+b = randrange(1,100,1)
+liczba = nww(a,b)
 
-b = split_str(liczba)
-b = list(b)
-l = len(b)
-x=""
-y=""
-z=""
-k=""
-
-
-
-j = {"0":"","1":"I", "2":"II" , "3":"III", "4":"IV", "5":"V", "6":"VI", "7":"VII", "8":"VIII", "9":"IX"}
-d = {"0":"","1":"X", "2":"XX", "3":"XXX", "4":"XL", "5":"L", "6":"LX", "7":"LXX", "8":"LXXX", "9":"XC"}
-s = {"0":"","1":"C", "2":"CC", "3":"CCC", "4":"CD", "5":"D", "6":"DC", "7":"DCC", "8":"DCCC", "9":"DM"}
-t = {"1":"M", "2":"MM", "3":"MMM"}
-if (l == 1):
-    wynik = j[b[0]]
-if (l == 2):
-    x = d[b[0]]
-    y = j[b[1]]
-    wynik = x+y
-if (l == 3):
-    x = s[b[0]]
-    y = d[b[1]]
-    z = j[b[2]]
-    wynik = x+y+z
-if (l == 4):
-    x = t[b[0]]
-    y = s[b[1]]
-    z = d[b[2]]
-    k = j[b[3]]
-    wynik = x+y+z+k
-
-
-
-poleconko = str(liczba)
+poleconko = "NWW(" + str(a) + ',' + str(b) + ')'  
 
 polecenie = Label(root, text = poleconko, background='papaya whip', font = "Arial 30 ", fg = 'black').place(x= polx, y=poly)
-var = StringVar()
+
+
+
+var = IntVar()
 odpowiedz = Label(root, text = "Odpowiedz", background='papaya whip', font = "Arial 30 ", fg = 'black').place(x= odpx, y=odpy)
 poletekstowe = Entry(root, bd = 10, textvariable=var).place(x= polex, y=odpy)
 
