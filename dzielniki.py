@@ -2,6 +2,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 import os
 from subprocess import call
+from random import *
 
 
 
@@ -19,32 +20,29 @@ class Window(Frame):
 
 def cofnij():
     base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'podstawowka.py')
+    file_path = os.path.join(base_folder, 'podzielnoscliczb.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def opendzielniki():
+def odswiez():
+
     base_folder = os.path.dirname(__file__)
     file_path = os.path.join(base_folder, 'dzielniki.py')
     file_path = str(file_path)
     root.destroy()
     call(['python3', file_path])
 
-def opennww():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'nww.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
 
-def opennwd():
-    base_folder = os.path.dirname(__file__)
-    file_path = os.path.join(base_folder, 'nwd.py')
-    file_path = str(file_path)
-    root.destroy()
-    call(['python3', file_path])
 
+
+def sprawdz():
+    userinput= var.get()
+    if (userinput == liczba):
+        poprawna = Label(root, text = "Poprawna", background='papaya whip', font = "Arial 30 ", fg = 'Dark Green').place(x= jakax, y=poly)
+    else:
+        blad = "Poprawny wynik - " + str(liczba)
+        niepoprawna = Label(root, text = blad, background='papaya whip', font = "Arial 30 ", fg = 'Red2').place(x= jakax, y=poly)
 
 
 root = Tk()
@@ -55,6 +53,16 @@ ekran_dl = root.winfo_screenwidth()
 ekran_szer = root.winfo_screenheight()
 okno_dl = 0.9*ekran_dl
 okno_szer = 0.9*ekran_szer
+odsx = 1.3*okno_szer
+odpy = 0.25*okno_dl
+odpx = 0.5*okno_szer
+polex = 0.5*okno_szer
+poly = 0.15*okno_dl
+polx = 0.5*okno_szer
+jakax = 0.8*okno_szer
+sprx = 0.8*okno_szer
+
+
 okno_dl = str(int(okno_dl))
 okno_szer= str(int(okno_szer))
 wymiar = okno_dl + 'x' + okno_szer
@@ -63,10 +71,11 @@ app = Window(root)
 
 #dopracowanie detali wyglądu
 
-tekst = Label(root, text = 'Wybierz temat:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
+tekst = Label(root, text = 'Wypisz dzielniki liczby:', font = "Arial 30 ", width = okno_szer, height=4,background='navajo white', fg = 'papaya whip', anchor = CENTER)
 tekst.pack()
 
 root.configure(background='papaya whip')
+
 
 #dodanie przycisków oraz dopracowanie szczegółów ich wyglądu w zaleznosci od wielkosci okna
 
@@ -75,26 +84,42 @@ okno_szer= int(okno_szer)
 
 buttonwidth = int(0.05*okno_dl)
 buttonheight = int(0.001*okno_szer)
-buttonx = 0.35*okno_szer
-button1y = 0.13*okno_dl
-button2y = 0.17*okno_dl
-button3y = 0.21*okno_dl
-button4y = 0.25*okno_dl
-button5y = 0.29*okno_dl
-button6y = 0.33*okno_dl
 
 
-klasa4 = Button(root, text = 'Trojkat', width=buttonwidth, height=buttonheight, font = "Arial 20", command = opentrojkat).place(x= buttonx, y=button1y)
-klasa5 = Button(root, text = 'Okrag', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openokrag).place(x= buttonx, y=button2y)
-klasa6 = Button(root, text = 'Prostokat', width=buttonwidth, height=buttonheight, font = "Arial 20", command = openprostokat).place(x= buttonx, y=button3y)
+
 
 cofniecie = Button(root, text = 'Cofnij', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = cofnij).place(x= 0, y=0)
+refresh = Button(root, text = 'Kolejny przyklad', width=int(0.35*buttonwidth), height=buttonheight, font = "Arial 20", command = odswiez).place(x= odsx, y=0)
+
+
+a = randrange(1,100,1)
+modulo = 1
+x = ''
+while modulo <= a:
+    if (a%modulo==0):
+        x += str(modulo) + ','
+    modulo = modulo + 1
+liczba = str(x) 
+liczba = liczba[:-1]
+
+poleconko = str(a)
+
+polecenie = Label(root, text = poleconko, background='papaya whip', font = "Arial 30 ", fg = 'black').place(x= polx, y=poly)
+
+
+
+var = StringVar()
+odpowiedz = Label(root, text = "Odpowiedz", background='papaya whip', font = "Arial 30 ", fg = 'black').place(x= odpx, y=odpy)
+poletekstowe = Entry(root, bd = 10, textvariable=var).place(x= polex, y=odpy)
+
+sprawdzenie = Button(root, text = 'Enter', width=int(0.2*buttonwidth), height=buttonheight, font = "Arial 20", command = sprawdz).place(x= sprx, y=odpy)
+
+
 
 #dodanie zdjęcia u dołu strony dopasowanego do wymiarów okna aplikacji
 base_folder = os.path.dirname(__file__)
 image_path = os.path.join(base_folder, 'children.png')
 children = PhotoImage(file=image_path)
-
 label = Label(image=children, width = okno_dl, height = 0.43 * okno_szer)
 label.image = children
 label.pack(side = BOTTOM)
